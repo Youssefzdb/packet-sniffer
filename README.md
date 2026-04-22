@@ -1,16 +1,32 @@
-# 🌐 PacketSniffer
+# 🦈 ShadowSniffer — Network Packet Analyzer
 
-> Network Packet Capture & Protocol Analysis Tool | by **Shadow Core**
+> Advanced Packet Capture & Protocol Analysis Tool | by **Shadow Core**
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python) ![Scapy](https://img.shields.io/badge/Scapy-2.5+-green) ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS-lightgrey)
 
-## Features
-- 📡 **Live Capture** — Capture packets on any interface with BPF filters
-- 🔬 **PCAP Analyzer** — Protocol stats, top IPs, anomaly detection
-- 🌍 **DNS Monitor** — Real-time DNS query tracking + tunneling detection
-- 🌐 **HTTP Parser** — Capture HTTP traffic + credential detection in POST
+```
+███████╗███╗   ██╗██╗███████╗███████╗███████╗██████╗
+██╔════╝████╗  ██║██║██╔════╝██╔════╝██╔════╝██╔══██╗
+███████╗██╔██╗ ██║██║█████╗  █████╗  █████╗  ██████╔╝
+╚════██║██║╚██╗██║██║██╔══╝  ██╔══╝  ██╔══╝  ██╔══██╗
+███████║██║ ╚████║██║██║     ██║     ███████╗██║  ██║
+╚══════╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝
+```
 
-## Installation
+## 🔍 Features
+
+- **Live Packet Capture** — Capture packets on any network interface
+- **Protocol Analysis** — TCP, UDP, ICMP, DNS, HTTP, ARP
+- **Traffic Statistics** — Real-time bandwidth, protocol breakdown
+- **DNS Monitor** — Watch DNS queries & responses live
+- **HTTP Sniffer** — Extract HTTP methods, URLs, headers
+- **ARP Watch** — Detect ARP spoofing & poisoning attempts
+- **PCAP Export** — Save captures in PCAP format
+- **JSON Reports** — Export analysis results
+
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/Youssefzdb/packet-sniffer
@@ -18,24 +34,32 @@ cd packet-sniffer
 pip install -r requirements.txt
 ```
 
-## Usage
+## ⚡ Usage
 
 ```bash
-# Live capture (100 packets)
-sudo python3 main.py sniff --iface eth0 --count 100 --output capture.pcap
+# List network interfaces
+sudo python3 main.py interfaces
 
-# Analyze pcap file
-python3 main.py analyze --file capture.pcap --proto tcp
+# Capture all packets on eth0
+sudo python3 main.py capture --iface eth0 --count 100
 
-# Monitor DNS queries
-sudo python3 main.py dns --iface eth0 --count 50
+# Monitor DNS traffic only
+sudo python3 main.py dns --iface eth0
 
-# Capture HTTP traffic
-sudo python3 main.py http --iface eth0 --count 50
+# Sniff HTTP traffic
+sudo python3 main.py http --iface eth0
+
+# Watch for ARP spoofing
+sudo python3 main.py arp --iface eth0
+
+# Live traffic stats
+sudo python3 main.py stats --iface eth0 --interval 5
 ```
 
 ## ⚠️ Disclaimer
-For authorized network monitoring only. Always obtain proper permission.
+
+> Requires root/admin privileges. Only capture traffic on networks you own or have explicit permission to monitor.
 
 ## 👤 Author
+
 **Shadow Core** | Network Security Researcher
